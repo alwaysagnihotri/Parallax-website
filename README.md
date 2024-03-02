@@ -1,6 +1,7 @@
 <h1 align="center" id="title">Kedar Kantha</h1>
 
 <p id="description">A parallax website - Gives some imformation about a wonderfull trek.</p>
+<p>https://kedar-kantha.netlify.app/</p>
 
   
   
