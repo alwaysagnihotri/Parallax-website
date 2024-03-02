@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+  
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px; /*placig the z index as per our eyes*/
+
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d; /*this make sure that we can enable 3d property as per perspective: 10px;*/
+    z-index: -1;
+}
+
+.foreground{
+    position: absolute;
+    height: 100%;
+    width: 70%; 
+    object-fit: cover;
+    z-index: -1;
+    bottom:-75%;
+    transform: translateZ(-20px) scale(1.5);
+}
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+    z-index: -1;
+    transform: translateZ(-40px) scale(5.2);
+}
+
+h1{
+    position: absolute;
+    top: 15rem;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    letter-spacing:normal;
+    font-size: 5rem;
+    color:white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+section{
+    background-color: rgb(15, 15, 15);
+    color: white;/*text color*/
+    padding: 5rem 0;
+}
+
+.secHeading{
+    font-size: 3rem;
+    padding: 0 5rem;
+}
+
+.text{
+    font-size: 1.3rem;
+    padding: 0 5rem;
+    margin: 5rem 0;
+    /* font-family: 'Niramit', serif; */
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    /*fixing the bg imgs as per the screen
+    as they were large in size and below 2 lines help them setting with the screen*/
+
+    background-attachment:fixed; /*img will remain fixed and content will move over img*/
+    background-size: cover;
+    background-position: center;
+    height: 600px;  /*bg img window*/ 
+}
+
+.desc{
+    position:absolute;
+    /* background-color: white; */
+    padding: 0.5rem 1.5rem;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 5rem;
+    font-family: 'Sincopa', sans-serif;
+}
+
+.desc2{
+    position:absolute;
+    padding: 0.5rem 1.5rem;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 2rem;
+    font-family: 'Kalimati', serif;
+}
+.bg1{
+    background-image: url(location_1.jpg);
+}
+
+.bg2{
+    background-image: url(location_2.jpg);
+}
+
+.bg3{
+    background-image: url(location_3.jpg);
+}
+
+.bg4{
+    background-image: url(final.jpg);
+}
+
+/*******************************Button Styles ***********************************/
+#button-container{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+
+}
+
+button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(49, 49, 49, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+    text-decoration: none;
+    transition: 0.5s ease all;
+    z-index: 1;
+  }
+  
+  button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+  }
+  
+  button:hover, button:focus {
+    color: white;
+  }
+  
+  button:hover:before, button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  button:active {
+    transform: scale(0.9);
+  }
